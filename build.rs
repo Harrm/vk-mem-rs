@@ -17,6 +17,9 @@ fn main() {
     #[cfg(feature = "debug_log")]
     build.define("VK_MEM_RS_ENABLE_DEBUG_LOG", "1");
 
+    #[cfg(feature = "leak_log")]
+    build.define("VK_MEM_RS_ENABLE_LEAK_LOG", "1");
+
     // We want to use the loader in ash, instead of requiring us to link
     // in vulkan.dll/.dylib in addition to ash. This is especially important
     // for MoltenVK, where there is no default installation path, unlike
